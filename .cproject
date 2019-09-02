@@ -40,15 +40,17 @@
 								<inputType id="nvcc.compiler.input.c.87590807" superClass="nvcc.compiler.input.c"/>
 							</tool>
 							<tool id="nvcc.linker.base.1847097544" name="NVCC Linker" superClass="nvcc.linker.base">
-								<option defaultValue="true" id="nvcc.linker.option.shared.1440141385" name="Shared (-shared)" superClass="nvcc.linker.option.shared" value="false" valueType="boolean"/>
+								<option defaultValue="true" id="nvcc.linker.option.shared.1440141385" name="Shared (-shared)" superClass="nvcc.linker.option.shared" value="true" valueType="boolean"/>
 								<option id="nvcc.linker.option.libs.398879498" name="Libraries (-l)" superClass="nvcc.linker.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="pq"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="boost_system"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="pqxx"/>
+									<listOptionValue builtIn="false" value="pqxx"/>
+									<listOptionValue builtIn="false" value="boost_system"/>
+									<listOptionValue builtIn="false" value="pq"/>
 								</option>
 								<option id="nvcc.linker.option.paths.200656300" name="Library search path (-L)" superClass="nvcc.linker.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/usr/include/postgresql-11"/>
+									<listOptionValue builtIn="false" value="/usr/include/postgresql"/>
+									<listOptionValue builtIn="false" value="/usr/include/pqxx"/>
 								</option>
+								<option id="nvcc.linker.option.cudart.334823410" name="CUDA Runtime Library:" superClass="nvcc.linker.option.cudart" value="nvcc.linker.option.cudart.shared" valueType="enumerated"/>
 								<inputType id="nvcc.linker.input.942728134" superClass="nvcc.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>

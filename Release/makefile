@@ -52,19 +52,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: libtorsion_cuda2
+all: torsion_cuda2
 
 # Tool invocations
-libtorsion_cuda2: $(OBJS) $(USER_OBJS)
+torsion_cuda2: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: NVCC Linker'
-	/usr/local/cuda-10.1/bin/nvcc --cudart shared -L/usr/include/postgresql -L/usr/include/pqxx -shared --relocatable-device-code=true -gencode arch=compute_52,code=compute_52 -gencode arch=compute_52,code=sm_52 -link -o  "libtorsion_cuda2" $(OBJS) $(USER_OBJS) $(LIBS)
+	/usr/local/cuda-10.1/bin/nvcc --cudart static -L/usr/include/postgresql-11 --relocatable-device-code=false -gencode arch=compute_52,code=compute_52 -gencode arch=compute_52,code=sm_52 -link -o  "torsion_cuda2" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(LIBRARIES)$(CC_DEPS)$(C++_DEPS)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CU_DEPS)$(CPP_DEPS)$(C_DEPS) libtorsion_cuda2
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CU_DEPS)$(CPP_DEPS)$(C_DEPS) torsion_cuda2
 	-@echo ' '
 
 .PHONY: all clean dependents

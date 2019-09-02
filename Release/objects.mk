@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lpqxx -lboost_system -lpq
+LIBS := -lpq -lboost_system -lpqxx
 

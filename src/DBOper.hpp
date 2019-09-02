@@ -5,8 +5,6 @@
  *      Author: alfonso
  */
 
-#ifndef DBOPER_HPP_
-#define DBOPER_HPP_
 
 
 #include <iostream>
@@ -20,6 +18,11 @@
 #include "EntradaD.hpp"
 #include "EntradaR.hpp"
 #include "Comun.hpp"
+
+
+#ifndef DBOPER_HPP_
+#define DBOPER_HPP_
+
 
 using namespace std;
 
