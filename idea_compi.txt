@@ -1,0 +1,9 @@
+
+
+
+
+
+/opt/cuda/bin/nvcc -ccbin g++ -I../../common/inc  -m64 -gencode arch=compute_52,code=sm_52  -c *.cpp -c *.cu -lpqxx -lpq -lboost-system
+
+
+/opt/cuda/bin/nvcc --cudart static -L/usr/include/postgresql-11 --relocatable-device-code=false -gencode arch=compute_52,code=compute_52 -link -o  Torsion3  *.o   -lpq -lpqxx -lboost-system

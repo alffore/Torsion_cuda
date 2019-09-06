@@ -4,7 +4,7 @@
  *  Created on: 31/08/2019
  *      Author: alfonso
  */
-#include <cuda.h>
+
 
 #include "Torsion.hpp"
 
@@ -77,7 +77,6 @@ void Torsion::calculaTorsionC() {
 
 
 	//se aloja la memoria en el dispositivo
-
 	cudaMalloc((void**) &(pdm_device), idc*TAMV * sizeof(float));
 
 

@@ -33,16 +33,16 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: NVCC Compiler'
-	/opt/cuda/bin/nvcc -G -g -O0 -v -Xcompiler -fPIC -gencode arch=compute_52,code=sm_52  -odir "src" -M -o "$(@:%.o=%.d)" "$<"
-	/opt/cuda/bin/nvcc -G -g -O0 -v -Xcompiler -fPIC --compile  -x c++ -o  "$@" "$<"
+	/opt/cuda/bin/nvcc -G -g -O0 -Xcompiler -fPIC -gencode arch=compute_52,code=sm_52  -odir "src" -M -o "$(@:%.o=%.d)" "$<"
+	/opt/cuda/bin/nvcc -G -g -O0 -Xcompiler -fPIC --compile  -x c++ -o  "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/%.o: ../src/%.cu
 	@echo 'Building file: $<'
 	@echo 'Invoking: NVCC Compiler'
-	/opt/cuda/bin/nvcc -G -g -O0 -v -Xcompiler -fPIC -gencode arch=compute_52,code=sm_52  -odir "src" -M -o "$(@:%.o=%.d)" "$<"
-	/opt/cuda/bin/nvcc -G -g -O0 -v -Xcompiler -fPIC --compile --relocatable-device-code=true -gencode arch=compute_52,code=compute_52 -gencode arch=compute_52,code=sm_52  -x cu -o  "$@" "$<"
+	/opt/cuda/bin/nvcc -G -g -O0 -Xcompiler -fPIC -gencode arch=compute_52,code=sm_52  -odir "src" -M -o "$(@:%.o=%.d)" "$<"
+	/opt/cuda/bin/nvcc -G -g -O0 -Xcompiler -fPIC --compile --relocatable-device-code=false -gencode arch=compute_52,code=compute_52 -gencode arch=compute_52,code=sm_52  -x cu -o  "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

@@ -1,5 +1,6 @@
 
-#include <cuda.h>
+
+
 #include "Comun.hpp"
 
 

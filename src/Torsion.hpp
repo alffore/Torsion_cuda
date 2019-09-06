@@ -15,7 +15,7 @@
 #include <boost/algorithm/string.hpp>
 
 #include <cuda.h>
-#include <cuda_runtime.h>
+
 
 
 

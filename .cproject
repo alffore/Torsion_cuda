@@ -34,13 +34,13 @@
 								<option id="nvcc.compiler.cpp11option.663649912" name="Enable C++11 support (-std=c++11)" superClass="nvcc.compiler.cpp11option" value="false" valueType="boolean"/>
 								<option id="nvcc.compiler.deviceDebug.235150129" name="Generate device debug information (-G)" superClass="nvcc.compiler.deviceDebug" value="true" valueType="boolean"/>
 								<option id="nvcc.compiler.option.level.595411101" name="Generate host debug information (-g)" superClass="nvcc.compiler.option.level" value="true" valueType="boolean"/>
-								<option id="nvcc.compiler.verbose.1368369877" name="Verbose (-v)" superClass="nvcc.compiler.verbose" value="true" valueType="boolean"/>
+								<option id="nvcc.compiler.verbose.1368369877" name="Verbose (-v)" superClass="nvcc.compiler.verbose" value="false" valueType="boolean"/>
 								<inputType id="nvcc.compiler.input.cu.201538985" superClass="nvcc.compiler.input.cu"/>
 								<inputType id="nvcc.compiler.input.cpp.606572619" superClass="nvcc.compiler.input.cpp"/>
 								<inputType id="nvcc.compiler.input.c.87590807" superClass="nvcc.compiler.input.c"/>
 							</tool>
 							<tool id="nvcc.linker.base.1847097544" name="NVCC Linker" superClass="nvcc.linker.base">
-								<option defaultValue="true" id="nvcc.linker.option.shared.1440141385" name="Shared (-shared)" superClass="nvcc.linker.option.shared" value="false" valueType="boolean"/>
+								<option defaultValue="true" id="nvcc.linker.option.shared.1440141385" name="Shared (-shared)" superClass="nvcc.linker.option.shared" value="true" valueType="boolean"/>
 								<option id="nvcc.linker.option.libs.398879498" name="Libraries (-l)" superClass="nvcc.linker.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="pq"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="boost_system"/>
@@ -53,6 +53,7 @@
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
+								<outputType id="nvcc.linker.output.so.1047159403" outputPrefix="" superClass="nvcc.linker.output.so"/>
 							</tool>
 							<tool id="nvcc.archiver.base.1454182767" name="NVCC Archiver" superClass="nvcc.archiver.base"/>
 							<tool id="com.nvidia.host.assembler.1577802711" name="Host Assembler" superClass="com.nvidia.host.assembler">
@@ -66,7 +67,7 @@
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="com.nvidia.cuda.ide.build.project.ICudaProjectConfiguration">
-				<executable devicelink="true">
+				<executable devicelink="false">
 					<sass major="5" minor="2"/>
 					<ptx major="5" minor="2"/>
 				</executable>
@@ -171,4 +172,5 @@
 			<resource resourceType="PROJECT" workspacePath="/torsion_cuda2"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

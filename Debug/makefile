@@ -58,13 +58,13 @@ all: torsion_cuda2
 torsion_cuda2: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: NVCC Linker'
-	/opt/cuda/bin/nvcc --cudart static -L/usr/include/postgresql-11 --relocatable-device-code=true -gencode arch=compute_52,code=compute_52 -gencode arch=compute_52,code=sm_52 -link -o  "torsion_cuda2" $(OBJS) $(USER_OBJS) $(LIBS)
+	/opt/cuda/bin/nvcc --cudart static -L/usr/include/postgresql-11 -shared --relocatable-device-code=false -gencode arch=compute_52,code=compute_52 -gencode arch=compute_52,code=sm_52 -link -o  "torsion_cuda2" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CU_DEPS)$(CPP_DEPS)$(C_DEPS) torsion_cuda2
+	-$(RM) $(LIBRARIES)$(CC_DEPS)$(C++_DEPS)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CU_DEPS)$(CPP_DEPS)$(C_DEPS) torsion_cuda2
 	-@echo ' '
 
 .PHONY: all clean dependents
